@@ -1,0 +1,142 @@
+[
+  [
+    "What is the highest eligible free rate for K-12 students in the schools in Alameda County?",
+    "SELECT MAX(\"Percent (%) Eligible Free (K-12)\") FROM frpm JOIN schools ON frpm.CDSCode = schools.CDSCode WHERE schools.County = 'Alameda'\t----- bird -----\tcalifornia_schools"
+  ],
+  [
+    "What is the highest eligible free rate for K-12 students in the schools in Alameda County?",
+    "SELECT MAX(`Free Meal Count (K-12)` * 1.0 / `Enrollment (K-12)`) AS highest_eligible_free_rate FROM schools WHERE County = 'Alameda County';\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "What is the highest eligible free rate for K-12 students in the schools in Alameda County?",
+    "SELECT MAX(`Free Meal Count (K-12)` * 1.0 / `Enrollment (K-12)`) AS highest_eligible_free_rate FROM schools WHERE County = 'Alameda' AND `Enrollment (K-12)` IS NOT NULL AND `Free Meal Count (K-12)` IS NOT NULL\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "What is the highest eligible free rate for K-12 students in the schools in Alameda County?",
+    "SELECT MAX(\"Free Meal Count (K-12)\" * 1.0 / \"Enrollment (K-12)\") AS highest_eligible_free_rate FROM schools WHERE county = 'Alameda County' AND \"Enrollment (K-12)\" IS NOT NULL AND \"Free Meal Count (K-12)\" IS NOT NULL\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT year, primary_type, COUNT(unique_key) AS crime_count FROM austin_crime GROUP BY year, primary_type ORDER BY year ASC, crime_count DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT district, AVG(latitude) AS avg_latitude, AVG(longitude) AS avg_longitude, primary_type, COUNT(*) AS total_crimes FROM austin_crime GROUP BY district, primary_type ORDER BY total_crimes DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT year, district, primary_type, COUNT(*) AS total_crimes FROM austin_crime WHERE year IS NOT NULL GROUP BY year, district, primary_type ORDER BY year DESC, district ASC, total_crimes DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT district, primary_type, AVG(latitude) AS avg_latitude, AVG(longitude) AS avg_longitude, COUNT(*) AS total_crimes FROM austin_crime WHERE latitude IS NOT NULL AND longitude IS NOT NULL GROUP BY district, primary_type ORDER BY total_crimes DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT district, council_district_code, primary_type, COUNT(*) AS total_crimes FROM austin_crime WHERE district IS NOT NULL AND council_district_code IS NOT NULL AND primary_type IS NOT NULL GROUP BY district, council_district_code, primary_type ORDER BY COUNT(*) DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT district, primary_type, council_district_code, year, COUNT(*) AS total_crimes FROM austin_crime WHERE year = '2015.0' AND district IS NOT NULL AND primary_type IS NOT NULL AND council_district_code IS NOT NULL GROUP BY district, primary_type, council_district_code, year ORDER BY COUNT(*) DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT district, AVG(latitude) AS avg_latitude, AVG(longitude) AS avg_longitude, primary_type, COUNT(*) AS total_crimes FROM austin_crime WHERE district IS NOT NULL AND primary_type IS NOT NULL GROUP BY district, primary_type ORDER BY COUNT(*) DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT district, council_district_code, primary_type, COUNT(*) AS total_crimes FROM austin_crime WHERE district IS NOT NULL AND council_district_code IS NOT NULL AND primary_type IS NOT NULL GROUP BY district, council_district_code, primary_type ORDER BY COUNT(*) DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT district, council_district_code, primary_type, COUNT(*) AS total_crimes FROM austin_crime WHERE district IS NOT NULL AND council_district_code IS NOT NULL AND primary_type IS NOT NULL GROUP BY district, council_district_code, primary_type ORDER BY COUNT(*) DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT district, year, primary_type, COUNT(*) AS total_crimes FROM austin_crime WHERE year IS NOT NULL GROUP BY district, year, primary_type ORDER BY year DESC, district, total_crimes DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT district, AVG(latitude) AS avg_latitude, AVG(longitude) AS avg_longitude, primary_type, COUNT(*) AS total_crimes FROM austin_crime GROUP BY district, primary_type ORDER BY total_crimes DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT district, AVG(latitude) AS avg_latitude, AVG(longitude) AS avg_longitude, primary_type, COUNT(*) AS total_crimes FROM austin_crime GROUP BY district, primary_type ORDER BY total_crimes DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT district, primary_type, COUNT(*) AS total_crimes FROM austin_crime WHERE district IS NOT NULL GROUP BY district, primary_type ORDER BY total_crimes DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT district, AVG(latitude) AS avg_latitude, AVG(longitude) AS avg_longitude, primary_type, COUNT(*) AS total_crimes FROM austin_crime GROUP BY district, primary_type ORDER BY total_crimes DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT district, primary_type, COUNT(*) AS total_crimes FROM austin_crime WHERE district = 'A' GROUP BY district, primary_type ORDER BY total_crimes DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT district, AVG(latitude) AS avg_latitude, AVG(longitude) AS avg_longitude, primary_type FROM austin_crime WHERE district = 'D' GROUP BY district, primary_type ORDER BY avg_latitude DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT district, latitude, longitude, primary_type, COUNT(*) AS total_crimes FROM austin_crime WHERE primary_type = 'Theft' GROUP BY district, latitude, longitude, primary_type ORDER BY total_crimes DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT district, primary_type, COUNT(*) AS total_crimes FROM austin_crime GROUP BY district, primary_type ORDER BY total_crimes DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT district, latitude, longitude, primary_type, COUNT(*) AS total_crimes FROM austin_crime WHERE district = 'D' GROUP BY district, latitude, longitude, primary_type ORDER BY total_crimes DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT district, latitude, longitude, primary_type, COUNT(*) AS total_crimes FROM austin_crime WHERE primary_type = 'Theft' GROUP BY district, latitude, longitude, primary_type ORDER BY total_crimes DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT district, latitude, longitude, primary_type, COUNT(*) AS total_crimes FROM austin_crime WHERE district = 'D' GROUP BY district, latitude, longitude, primary_type ORDER BY total_crimes DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT clearance_status, primary_type, COUNT(*) AS total_crimes FROM austin_crime GROUP BY clearance_status, primary_type ORDER BY total_crimes DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT primary_type, clearance_status, COUNT(*) AS total_crimes FROM austin_crime WHERE clearance_status IS NOT NULL GROUP BY primary_type, clearance_status ORDER BY total_crimes DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT clearance_status, primary_type, COUNT(*) AS total_crimes FROM austin_crime GROUP BY clearance_status, primary_type ORDER BY total_crimes DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT clearance_status, primary_type, COUNT(*) AS total_crimes FROM austin_crime GROUP BY clearance_status, primary_type ORDER BY total_crimes DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT strftime('%Y', timestamp) AS year, district, primary_type, COUNT(primary_type) AS total_crimes FROM austin_crime WHERE timestamp IS NOT NULL AND district IS NOT NULL AND primary_type IS NOT NULL AND strftime('%Y', timestamp) IS NOT NULL GROUP BY strftime('%Y', timestamp), district, primary_type ORDER BY year, district, total_crimes DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Analyze the crime trends",
+    "SELECT clearance_status, primary_type, COUNT(*) AS total_crimes FROM austin_crime GROUP BY clearance_status, primary_type ORDER BY total_crimes DESC;\t----- bird -----\taustin_Crime"
+  ],
+  [
+    "Please list the lowest three eligible free rates for students aged 5-17 in continuation schools.",
+    "SELECT schools.`CDSCode`, schools.`SOCType`, schools.`EdOpsCode`, schools.`EdOpsName`, frpm.`Free Meal Count (Ages 5-17)`, satscores.`enroll12` FROM frpm JOIN schools ON frpm.`CDSCode` = schools.`CDSCode` JOIN satscores ON satscores.`cds` = schools.`CDSCode` WHERE schools.`SOCType` = 'Continuation High Schools' AND satscores.`enroll12` IS NOT NULL AND satscores.`enroll12` > 0 AND frpm.`Free Meal Count (Ages 5-17)` IS NOT NULL AND frpm.`Free Meal Count (Ages 5-17)` > 0 AND (frpm.`Free Meal Count (Ages 5-17)` / satscores.`enroll12`) IS NOT NULL AND (frpm.`Free Meal Count (Ages 5-17)` / satscores.`enroll12`) > 0 AND satscores.`enroll12` >= 5 AND satscores.`enroll12` <= 17 ORDER BY (frpm.`Free Meal Count (Ages 5-17)` / satscores.`enroll12`) ASC LIMIT 3;\t----- bird -----\tcalifornia_schools"
+  ],
+  [
+    "Please list the zip code of all the charter schools in Fresno County Office of Education.",
+    "SELECT DISTINCT Zip FROM schools WHERE Charter = 1 AND County = 'Fresno'\t----- bird -----\tcalifornia_schools"
+  ],
+  [
+    "What is the unabbreviated mailing address of the school with the highest FRPM count for K-12 students?",
+    "SELECT schools.MailStreet FROM schools JOIN frpm ON frpm.CDSCode = schools.CDSCode WHERE frpm.\"FRPM Count (K-12)\" = (SELECT MAX(\"FRPM Count (K-12)\") FROM frpm)\t----- bird -----\tcalifornia_schools"
+  ],
+  [
+    "Please list the phone numbers of the direct charter-funded schools that are opened after 2000/1/1.",
+    "SELECT Phone FROM schools WHERE Charter = 1 AND OpenDate > '2000-01-01' AND OpenDate IS NOT NULL\t----- bird -----\tcalifornia_schools"
+  ]
+]

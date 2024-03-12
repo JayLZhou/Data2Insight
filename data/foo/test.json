@@ -1,0 +1,8 @@
+[
+    {
+        "db_id": "austin_Crime",
+        "question": "Analyze the crime trends",
+        "evidence": "Eligible free rate for K-12 = `Free Meal Count (K-12)` / `Enrollment (K-12)`",
+        "SQL": ""
+    }
+]

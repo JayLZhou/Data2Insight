@@ -1,0 +1,19 @@
+﻿original_column_name,column_name,column_description,data_format,value_description
+address,,The specific address where the crime occurred.,text,
+census_tract,,The geographic area designated by the United States Census Bureau for statistical purposes.,real,
+clearance_date,,The date when the crime case was cleared or resolved.,timestamp,year/month/day 
+clearance_status,,"The status of the crime case's clearance, such as whether it was cleared or resulted in an arrest.",text,
+council_district_code,,The code representing the council district where the crime took place.,integer,
+description,,A detailed description or type of the crime.,text,
+district,,The abbreviation of the police district area where the crime occurred.,character,A-Z
+latitude,,the latitude of the crime location.,real,
+location,,The geographical coordinates (latitude and longitude) of the crime location.,real,"(latitude, longitude)"
+location_description,,A more detailed description of the crime location.,text,
+longitude,,The longitude of the crime location.,real,
+primary_type,,"The main type of crime, for example, theft, robbery, etc.",text,
+timestamp,,The specific timestamp when the crime occurred.,text,
+unique_key,,A unique identifier for each crime event.,integer,
+x_coordinate,,The X coordinate of the crime location (based on some mapping projection).,integer,
+y_coordinate,,The Y coordinate of the crime location (based on some mapping projection).,integer,
+year,,The year when the crime took place.,integer,
+zipcode,,The postal code of the crime location.,integer,
