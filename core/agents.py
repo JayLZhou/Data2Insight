@@ -561,6 +561,8 @@ class GudingAgent(BaseAgent):
         db_schema, db_fk, chosen_db_schem_dict = self._get_db_desc_str(db_id=db_id, extracted_schema=ext_sch)
         prompt = guider_template.format(db_id=db_id, query=query, insights = insights, desc_str=db_schema) 
         # prompt = guide_template.format(db_id=db_id, query=query,) 
+        import pdb
+        # pdb.set_trace()
         reply = LLM_API_FUC(prompt)
         extracted_schema_dict = parse_json(reply)
         if 'memory_insights' in message:
@@ -626,6 +628,8 @@ class InsightAgnet(BaseAgent):
         while bad_access < 4 and not early_stpo:
             reply = LLM_API_FUC(prompt).strip()
             etracted_insight_dict = parse_json(reply)
+            import pdb
+            pdb.set_trace()
             if len(etracted_insight_dict['analysis_output']) != 2:
                 if bad_access == 0:
                     prompt += "Please make sure the analysis output is not empty (i.e., not ' ') "
